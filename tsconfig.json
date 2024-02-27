@@ -1,11 +1,18 @@
 {
   "compilerOptions": {
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "strict": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "jsx": "react-jsx",
+    "noImplicitAny": false
   },
   // "include": ["server", "client"]
 }

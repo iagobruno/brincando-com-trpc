@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import { createExpressMiddleware } from '@trpc/server/adapters/express'
 import { expressHandler } from 'trpc-playground/handlers/express'
 import { appRouter } from './routes'
@@ -11,6 +12,7 @@ async function bootstrap() {
 
   app.use(
     trpcApiEndpoint,
+    cors(),
     createExpressMiddleware({
       router: appRouter,
     }),
@@ -32,7 +34,7 @@ async function bootstrap() {
   const PORT = 3000
 
   app.listen(PORT, () => {
-    console.log(`🚀 Listening at http://localhost:${PORT}`)
+    console.log(`🚀 Server listening at http://localhost:${PORT}`)
   })
 }
 bootstrap()
